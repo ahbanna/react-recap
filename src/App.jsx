@@ -1,4 +1,5 @@
 import "./App.css";
+import ExploreMap from "./ExploreMap";
 const para2Style = {
   color: "white",
   backgroundColor: "#0384d1",
@@ -9,6 +10,7 @@ const para2Style = {
 function App() {
   return (
     <div>
+      {/* CSS style  */}
       <div className="css-style">
         <h1>CSS style added in the following ways</h1>
         <div>
@@ -32,23 +34,25 @@ function App() {
           </h3>
         </div>
       </div>
+      {/* Props */}
       <div className="props-area">
         <h1>Understanding Props</h1>
-        <Friend name="Banna" profession="Engineer"></Friend>
-        <Friend name="Munna" profession="Teacher"></Friend>
-        <Friend name="Ariful" profession="Job"></Friend>
-        <Friend name="Rony" profession="Job"></Friend>
+        <Friend name="Banna" age="20"></Friend>
+        <Friend name="Munna" age="25"></Friend>
+        <Friend name="Ariful" age="14"></Friend>
+        <Friend name="Rony" age="18"></Friend>
       </div>
+      {/* Understanding MAP */}
+      <ExploreMap></ExploreMap>;
     </div>
   );
 }
 
 function Friend(props) {
-  console.log(props);
   return (
     <div className="single-friend">
       <h2>Name:{props.name}</h2>
-      <h3>Profession: {props.profession}</h3>
+      <h3>Age: {props.age}</h3>
     </div>
   );
 }
