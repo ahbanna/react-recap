@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const ExploreUseState = () => {
   return (
     <div>
+      <h2>Use of useState</h2>
       <Counter></Counter>
     </div>
   );
@@ -20,7 +21,7 @@ function Counter() {
 
   return (
     <div>
-      <h1>Count: {count}</h1>
+      <h4>Count: {count}</h4>
       <button onClick={increaseCount}>Increase</button>
       <button onClick={decreaseCount}>Decrease</button>
     </div>

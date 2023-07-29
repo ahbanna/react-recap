@@ -1,5 +1,6 @@
 import "./App.css";
 import ExploreMap from "./ExploreMap";
+import ExploreUseEffect from "./ExploreUseEffect";
 import ExploreUseState from "./ExploreUseState";
 const para2Style = {
   color: "white",
@@ -45,6 +46,8 @@ function App() {
       </div>
       <ExploreMap></ExploreMap>; {/* Explore MAP */}
       <ExploreUseState></ExploreUseState> {/* Explore useState */}
+      {/* Explore useEffect to load user */}
+      <ExploreUseEffect></ExploreUseEffect>
     </div>
   );
 }
