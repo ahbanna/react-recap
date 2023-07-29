@@ -1,7 +1,9 @@
 import React from "react";
 
 const ExploreMap = () => {
+  // Array
   const foods = ["Pizza", "Burger", "Sushi", "Pasta", "Chocolate"];
+  // Array of objects
   const drinks = [
     { name: "Coca-Cola", company: "The Coca-Cola Company" },
     { name: "Pepsi", company: "PepsiCo, Inc." },
@@ -24,7 +26,7 @@ const ExploreMap = () => {
         {drinks.map((drink) => (
           <div>
             <h4>Name: {drink.name}</h4>
-            <p>Company: {drink.company}</p>
+            <h4>Company: {drink.company}</h4>
           </div>
         ))}
         {drinks.map((drink) => (
@@ -39,16 +41,17 @@ const ExploreMap = () => {
 };
 
 function MyFoods(props) {
+  console.log(props.name);
   return (
     <div>
-      <h3>Food Name: {props.name}</h3>
+      <p>Food Name: {props.name}</p>
     </div>
   );
 }
 function MyDrinks(props) {
   return (
     <div>
-      <h3>Drinks Name: {props.drinksName}</h3>
+      <p>Drinks Name: {props.drinksName}</p>
       <p>Company name: {props.companyName}</p>
     </div>
   );

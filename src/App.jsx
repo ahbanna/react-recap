@@ -1,5 +1,6 @@
 import "./App.css";
 import ExploreMap from "./ExploreMap";
+import ExploreUseState from "./ExploreUseState";
 const para2Style = {
   color: "white",
   backgroundColor: "#0384d1",
@@ -42,8 +43,8 @@ function App() {
         <Friend name="Ariful" age="14"></Friend>
         <Friend name="Rony" age="18"></Friend>
       </div>
-      {/* Understanding MAP */}
-      <ExploreMap></ExploreMap>;
+      <ExploreMap></ExploreMap>; {/* Explore MAP */}
+      <ExploreUseState></ExploreUseState> {/* Explore useState */}
     </div>
   );
 }
