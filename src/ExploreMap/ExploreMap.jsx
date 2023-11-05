@@ -1,4 +1,7 @@
 import React from "react";
+import SingleStd from "./SingleStd";
+// get data from stdData.js file
+import stdData from "../../stdData";
 
 const ExploreMap = () => {
   // Array
@@ -11,9 +14,30 @@ const ExploreMap = () => {
     { name: "Starbucks Coffee", company: "Starbucks Corporation" },
     { name: "Sprite", company: "The Coca-Cola Company" },
   ];
+  // Array of objects
+  const stdInfo = [
+    {
+      id: 1,
+      stdName: "Hasan",
+      stdClass: "nine",
+      stdRoll: 5,
+    },
+    {
+      id: 2,
+      stdName: "Kamal",
+      stdClass: "seven",
+      stdRoll: 2,
+    },
+    {
+      id: 3,
+      stdName: "Jamal",
+      stdClass: "five",
+      stdRoll: 1,
+    },
+  ];
   return (
     <div className="explore-map">
-      <h1>Understanding MAP</h1>
+      <h2>Explore MAP</h2>
       <div>
         {foods.map((food) => (
           <h4>Name: {food}</h4>
@@ -35,6 +59,19 @@ const ExploreMap = () => {
             companyName={drink.company}
           ></MyDrinks>
         ))}
+      </div>
+      <div className="all-std">
+        {stdInfo.map((item, index) => (
+          <SingleStd info={item} key={item.id}></SingleStd>
+          // <SingleStd info={item} key={index}></SingleStd>
+          //Method 2,
+          // <SingleStd {...item} key={index}></SingleStd>
+        ))}
+
+        {/*  Get data from stdData.js file*/}
+        {/* {stdData.map((item) => (
+          <SingleStd info={item} key={item.id}></SingleStd>
+        ))} */}
       </div>
     </div>
   );

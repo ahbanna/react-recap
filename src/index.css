@@ -1,0 +1,19 @@
+.usestate-area {
+  background-color: cadetblue;
+  padding: 30px 0;
+  border: 2px solid rgb(69, 47, 192);
+  width: 50%;
+  margin: 0 auto;
+}
+.dial-area {
+  width: 500px;
+  border: 2px solid red;
+  margin: 15px auto;
+  background-color: rgb(235, 184, 116);
+}
+.knob-area {
+  width: 300px;
+  border: 2px solid #000;
+  margin: 15px auto;
+  background-color: rgb(103, 176, 152);
+}

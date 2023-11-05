@@ -1,0 +1,9 @@
+.all-std {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+.single-std {
+  background: #f9cc9d;
+  padding: 20px;
+}
