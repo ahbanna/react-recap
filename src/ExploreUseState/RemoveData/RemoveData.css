@@ -1,0 +1,8 @@
+.all-data {
+  display: flex;
+}
+.single-data {
+  background: #68dba0;
+  padding: 40px;
+  margin-right: 20px;
+}
