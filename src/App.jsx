@@ -7,6 +7,7 @@ import Friends from "./Friends";
 import JsInJsx from "./JsInJsx/JsInJsx";
 import PropsExplore from "./PropsExplore/PropsExplore";
 import "bootstrap/dist/css/bootstrap.min.css";
+import UnderstandingJSX from "./UnderstandingJSX/UnderstandingJSX";
 const para2Style = {
   color: "white",
   backgroundColor: "#0384d1",
@@ -52,6 +53,7 @@ function App() {
       {/* Explore useEffect to load user */}
       <ExploreUseEffect></ExploreUseEffect>
       <JsInJsx></JsInJsx>
+      <UnderstandingJSX></UnderstandingJSX>
     </div>
   );
 }
