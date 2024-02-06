@@ -39,24 +39,33 @@ const ExploreMap = () => {
     <div className="explore-map">
       <h2>Explore MAP</h2>
       <div>
-        {foods.map((food) => (
-          <h4>Name: {food}</h4>
+        {/* Single line  */}
+        {foods.map((food, i) => (
+          <h4 key={i}>Name: {food}</h4>
         ))}
+        {/* Using {} and return keyword */}
+        <ul>
+          {foods.map((food, i) => {
+            console.log(i);
+            return <li key={i}>{food}</li>;
+          })}
+        </ul>
         {foods.map((food) => (
           <MyFoods name={food}></MyFoods>
         ))}
       </div>
       <div>
-        {drinks.map((drink) => (
-          <div>
+        {drinks.map((drink, i) => (
+          <div key={i}>
             <h4>Name: {drink.name}</h4>
             <h4>Company: {drink.company}</h4>
           </div>
         ))}
-        {drinks.map((drink) => (
+        {drinks.map((drink, i) => (
           <MyDrinks
             drinksName={drink.name}
             companyName={drink.company}
+            key={i}
           ></MyDrinks>
         ))}
       </div>
@@ -69,9 +78,9 @@ const ExploreMap = () => {
         ))}
 
         {/*  Get data from stdData.js file*/}
-        {/* {stdData.map((item) => (
+        {stdData.map((item) => (
           <SingleStd info={item} key={item.id}></SingleStd>
-        ))} */}
+        ))}
       </div>
     </div>
   );

@@ -1,8 +1,10 @@
 // Usecase 1: fetching data from API
-/*import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const ExploreUseEffect = () => {
   const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -10,11 +12,25 @@ const ExploreUseEffect = () => {
       .then((data) => {
         console.log(data);
         setUsers(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError("Fetching is not successful. Error: " + error.message);
+        setLoading(false);
       });
   }, []);
+
+  if (loading) {
+    return (
+      <div className="spinner-container">
+        <div className="spinner"></div>
+      </div>
+    );
+  }
   return (
     <div>
       <h2>Use of useEffect</h2>
+      <p>{error}</p>
       {users.map((user) => (
         <div style={{ background: "#cee7fb" }}>
           <h5>Name: {user.name}</h5>
@@ -34,7 +50,6 @@ function UserEmail(props) {
 }
 
 export default ExploreUseEffect;
-*/
 
 // Usecase 2: Update Timer
 /*import React, { useEffect, useState } from "react";
@@ -74,32 +89,41 @@ export default ExploreUseEffect;
 */
 
 // Usecase 3: Update DOM
-/*import React, { useEffect, useState } from "react";
+/*
+import React, { useEffect, useState } from "react";
 
 const ExploreUseEffect = () => {
   const [count, setCount] = useState(0);
+  const [text, setText] = useState("Initial text");
 
   const increaseCount = () => {
     setCount((preCount) => preCount + 1);
   };
-  const decreseCount = () => {
-    setCount((preCount) => preCount - 1);
-  };
-  const resetCount = () => {
-    setCount(0);
+  const textHandler = () => {
+    setText("The text has changed");
   };
 
   useEffect(() => {
-    console.log("Update");
-    document.title = `Click ${count} times`; // it runs every times when rendering
+    console.log("No dependency so calls with every render");
+  });
+  useEffect(() => {
+    console.log("Empty array so calll only first render");
+  }, []);
+  useEffect(() => {
+    console.log("When the value of count change, then it call");
+    document.title = `Click ${count} times`; // it call for first render + every times with count
   }, [count]);
+
+  useEffect(() => {
+    console.log("Text has changed:"); // // it call for first render + every times with text
+  }, [text]);
 
   return (
     <div>
       <h4>Count: {count}</h4>
       <button onClick={increaseCount}>Increase</button>
-      <button onClick={decreseCount}>Decrease</button>
-      <button onClick={resetCount}>Reset</button>
+      <button onClick={textHandler}>Click to change text</button>
+      <p>{text}</p>
     </div>
   );
 };

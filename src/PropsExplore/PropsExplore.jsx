@@ -3,22 +3,30 @@ import React from "react";
 import SingleInfo from "./SingleInfo";
 
 const PropsExplore = () => {
-  // pass variable
+  // variable
   const name = "Banna";
-  // pass object
+  // object
   const userInfo = {
     name: "Ariful",
     age: "30",
   };
-  // pass array
+  // array
   const friends = ["Raju", "Rony", "Asad"];
+  // functin
+  const alertFunction = () => {
+    alert("Hello");
+  };
   return (
     <div>
       <h2>Props Explore</h2>
       <SingleInfo
         userName={name}
         info={userInfo.name}
+        allInfo={userInfo}
         friend={friends[0]}
+        alertMessage={alertFunction}
+        title="This is title"
+        des="This is description"
       ></SingleInfo>
     </div>
   );

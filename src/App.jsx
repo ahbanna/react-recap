@@ -1,13 +1,16 @@
 import "./App.css";
 import ExploreMap from "./ExploreMap/ExploreMap";
-import ExploreProps from "./ExploreProps";
+// import ExploreProps from "./ExploreProps";
 import ExploreUseEffect from "./ExploreUseEffect";
 import ExploreUseState from "./ExploreUseState/ExploreUseState";
-import Friends from "./Friends";
+// import Friends from "./Friends";
 import JsInJsx from "./JsInJsx/JsInJsx";
 import PropsExplore from "./PropsExplore/PropsExplore";
 import "bootstrap/dist/css/bootstrap.min.css";
 import UnderstandingJSX from "./UnderstandingJSX/UnderstandingJSX";
+import ExploreUseRef from "./ExploreUseRef/ExploreUseRef";
+import Function from "./Function/Function";
+import ConditionalRendering from "./ConditionalRendering";
 const para2Style = {
   color: "white",
   backgroundColor: "#0384d1",
@@ -43,17 +46,20 @@ function App() {
         </div>
       </div>
       {/* Explore props */}
-      <ExploreProps></ExploreProps>
+      {/* <ExploreProps></ExploreProps> */}
       <PropsExplore></PropsExplore>
-      <Friends></Friends>
+      {/* <Friends></Friends> */}
       {/* Explore MAP */}
       <ExploreMap></ExploreMap>
       {/* Explore useState */}
       <ExploreUseState></ExploreUseState>
       {/* Explore useEffect to load user */}
       <ExploreUseEffect></ExploreUseEffect>
+      <ExploreUseRef></ExploreUseRef>
       <JsInJsx></JsInJsx>
       <UnderstandingJSX></UnderstandingJSX>
+      <Function></Function>
+      <ConditionalRendering></ConditionalRendering>
     </div>
   );
 }
