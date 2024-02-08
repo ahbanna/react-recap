@@ -11,6 +11,8 @@ import UnderstandingJSX from "./UnderstandingJSX/UnderstandingJSX";
 import ExploreUseRef from "./ExploreUseRef/ExploreUseRef";
 import Function from "./Function/Function";
 import ConditionalRendering from "./ConditionalRendering";
+import ClickEvent from "./ClickEvent/ClickEvent";
+import UserForm from "./UserForm/UserForm";
 const para2Style = {
   color: "white",
   backgroundColor: "#0384d1",
@@ -60,6 +62,8 @@ function App() {
       <UnderstandingJSX></UnderstandingJSX>
       <Function></Function>
       <ConditionalRendering></ConditionalRendering>
+      <ClickEvent></ClickEvent>
+      <UserForm></UserForm>
     </div>
   );
 }

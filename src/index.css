@@ -33,3 +33,21 @@
   height: 50px;
   animation: spin 2s linear infinite;
 }
+
+div {
+  margin: 10px 0;
+}
+
+.old-class {
+  color: green;
+}
+.new-class {
+  color: red;
+}
+
+/* ---------------- Usestate ------------------- */
+.usestate-basic {
+  background-color: #7ab532;
+  padding: 30px;
+  display: inline-block;
+}
