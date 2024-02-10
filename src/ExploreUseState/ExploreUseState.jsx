@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Dial from "./Dial/Dial";
 import RemoveData from "./RemoveData/RemoveData";
+import TodoList from "./TodoList/TodoList";
 
 const ExploreUseState = () => {
   const [count, setCount] = useState(0);
@@ -13,25 +14,19 @@ const ExploreUseState = () => {
   };
 
   // useState working with immutable object
-  const [data, setData] = useState({
+  const [myObj, setMyObj] = useState({
     key1: "value 1",
     key2: "value 2",
     key3: "value 3",
   });
-  // const change = () => {
-  //   setData((preData) => ({
-  //     ...data,
-  //     key1: "New value 1",
-  //     key2: "New value 2",
-  //   }));
-  // };
-
   const change = () => {
-    setData((preData)=> ({
-      ...data,
-      key1: "fsdfsfd"
-    }))
-  }
+    setMyObj((preObj) => ({
+      ...preObj,
+      key1: "New value 1",
+      key2: "New value 2",
+    }));
+  };
+
   return (
     <div className="usestate-area container">
       <h2>Understanding useState Hook</h2>
@@ -58,11 +53,11 @@ const ExploreUseState = () => {
 
       {/* useState working with immutable object */}
       <div>
-        <p>{data.key1}</p>
-        <p>{data.key2}</p>
+        <p>{myObj.key1}</p>
+        <p>{myObj.key2}</p>
         <button onClick={change}>Click to change</button>
       </div>
-
+      <TodoList></TodoList>
       <RemoveData></RemoveData>
     </div>
   );
