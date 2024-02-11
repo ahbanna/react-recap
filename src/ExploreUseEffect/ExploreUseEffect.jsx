@@ -20,6 +20,36 @@ const ExploreUseEffect = () => {
       });
   }, []);
 
+  // // Using async await
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  //       const data = await res.json();
+  //       setUsers(data);
+  //       setLoading(false);
+  //     } catch (error) {
+  //       setError(error.message);
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchData(); // Invoke the async function immediately
+  // }, []);
+
+  // main part which is used above async await
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  //     const data = await res.json();
+  //     setUsers(data);
+  //   };
+  //   fetchData();
+  // }, []);
+
+  // syntax
+  // useEffect(() => {},[])
+
   if (loading) {
     return (
       <div className="spinner-container">
@@ -31,6 +61,7 @@ const ExploreUseEffect = () => {
     <div>
       <h2>Use of useEffect</h2>
       <p>{error}</p>
+      {JSON.stringify(users)}
       {users.map((user) => (
         <div style={{ background: "#cee7fb" }}>
           <h5>Name: {user.name}</h5>

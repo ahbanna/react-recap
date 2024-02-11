@@ -9,13 +9,20 @@ const UserForm = () => {
     gender: "Male",
   });
 
-  const InputOnChange = (property, value) => {
-    setFormObj((preObj) => ({
-      ...preObj,
-      [property]: value,
+  // const handleChange = (name, value) => {
+  //   setFormObj((preObj) => ({
+  //     ...preObj,
+  //     [name]: value,
+  //   }));
+  // };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormObj((prevObj) => ({
+      ...prevObj,
+      [name]: value,
     }));
   };
-  const FormSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     alert("Form submitted successfully");
     console.log(formObj);
@@ -23,10 +30,11 @@ const UserForm = () => {
   return (
     <div>
       <h2>This is Managing Form Submit</h2>
-      <form onSubmit={FormSubmit}>
-        <input
+      <form onSubmit={handleSubmit}>
+        <div>
+          {/* <input
           onChange={(e) => {
-            InputOnChange("fName", e.target.value);
+            handleChange("fName", e.target.value);
           }}
           type="text"
           value={formObj.fName}
@@ -34,7 +42,7 @@ const UserForm = () => {
         />
         <input
           onChange={(e) => {
-            InputOnChange("lName", e.target.value);
+            handleChange("lName", e.target.value);
           }}
           type="text"
           value={formObj.lName}
@@ -42,7 +50,7 @@ const UserForm = () => {
         />
         <input
           onChange={(e) => {
-            InputOnChange("email", e.target.value);
+            handleChange("email", e.target.value);
           }}
           type="email"
           value={formObj.email}
@@ -50,7 +58,7 @@ const UserForm = () => {
         />
         <select
           onChange={(e) => {
-            InputOnChange("city", e.target.value);
+            handleChange("city", e.target.value);
           }}
           value={formObj.city}
         >
@@ -60,7 +68,7 @@ const UserForm = () => {
         </select>
         <input
           onChange={(e) => {
-            InputOnChange("gender", "Male");
+            handleChange("gender", "Male");
           }}
           type="radio"
           checked={formObj.gender === "Male"}
@@ -68,13 +76,104 @@ const UserForm = () => {
         Male
         <input
           onChange={(e) => {
-            InputOnChange("gender", "Female");
+            handleChange("gender", "Female");
           }}
           type="radio"
           checked={formObj.gender === "Female"}
         />
-        Femal
-        <br />
+        Female
+        <br /> */}
+        </div>
+        <div>
+          <div>
+            <label>
+              First Name:
+              <input
+                type="text"
+                name="fName"
+                value={formObj.fName}
+                onChange={handleChange}
+                required
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              Last Name:
+              <input
+                type="text"
+                name="lName"
+                value={formObj.lName}
+                onChange={handleChange}
+                required
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              Email:
+              <input
+                type="email"
+                name="email"
+                value={formObj.email}
+                onChange={handleChange}
+                required
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              City:
+              <select
+                name="city"
+                value={formObj.city}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select City</option>
+                <option value="Dhaka">Dhaka</option>
+                <option value="Bogra">Bogra</option>
+                <option value="Chittagong">Chittagong</option>
+              </select>
+            </label>
+          </div>
+          <label>Gender:</label>
+          <div>
+            <label>
+              Male
+              <input
+                type="radio"
+                name="gender"
+                value="Male"
+                checked={formObj.gender === "Male"}
+                onChange={handleChange}
+                required
+              />
+            </label>
+            <label>
+              Female
+              <input
+                type="radio"
+                name="gender"
+                value="Female"
+                checked={formObj.gender === "Female"}
+                onChange={handleChange}
+                required
+              />
+            </label>
+            <label>
+              Other
+              <input
+                type="radio"
+                name="gender"
+                value="other"
+                checked={formObj.gender === "other"}
+                onChange={handleChange}
+                required
+              />
+            </label>
+          </div>
+        </div>
         <button type="submit">Submit</button>
       </form>
     </div>
